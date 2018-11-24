@@ -1,20 +1,19 @@
 package com.example.ddd;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @RestController
 public class BaseController {
-    @PostMapping("ss")
-    public Map<String,String> aaa(@RequestBody String ss){
+    @PostMapping("/ss")
+    public @ResponseBody Map<String,String> aaa(@RequestBody String aa){
         Map<String,String> map = new HashMap<>();
 
-        if ("ss".equals("co2")){
+        if ("co2".equals(aa)){
             double min = 0.01;//最小值
             double max = 10000;//总和
             int scl =  2;//小数最大位数
